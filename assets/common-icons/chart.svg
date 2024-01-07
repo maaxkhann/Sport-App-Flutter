@@ -1,0 +1,16 @@
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Iconsax/Linear/chart2">
+<path id="Vector" d="M6.75 16.5H11.25C15 16.5 16.5 15 16.5 11.25V6.75C16.5 3 15 1.5 11.25 1.5H6.75C3 1.5 1.5 3 1.5 6.75V11.25C1.5 15 3 16.5 6.75 16.5Z" stroke="url(#paint0_linear_1297_2201)" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M11.625 13.875C12.45 13.875 13.125 13.2 13.125 12.375V5.625C13.125 4.8 12.45 4.125 11.625 4.125C10.8 4.125 10.125 4.8 10.125 5.625V12.375C10.125 12.7728 10.283 13.1544 10.5643 13.4357C10.8456 13.717 11.2272 13.875 11.625 13.875ZM6.375 13.875C7.2 13.875 7.875 13.2 7.875 12.375V9.75C7.875 8.925 7.2 8.25 6.375 8.25C5.55 8.25 4.875 8.925 4.875 9.75V12.375C4.875 12.7728 5.03304 13.1544 5.31434 13.4357C5.59564 13.717 5.97718 13.875 6.375 13.875Z" stroke="url(#paint1_linear_1297_2201)" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1297_2201" x1="1.5" y1="1.5" x2="19.3042" y2="11.5148" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F5F5F5"/>
+<stop offset="1" stop-color="#E0E0E0"/>
+</linearGradient>
+<linearGradient id="paint1_linear_1297_2201" x1="4.875" y1="4.125" x2="15.3848" y2="9.12724" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F5F5F5"/>
+<stop offset="1" stop-color="#E0E0E0"/>
+</linearGradient>
+</defs>
+</svg>
