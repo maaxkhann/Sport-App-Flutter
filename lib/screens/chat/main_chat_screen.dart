@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sports_app/app_constants/constant_colors.dart';
+import 'package:sports_app/screens/chat/group_chat_screen.dart';
 import 'package:sports_app/screens/chat/single_chat_screen.dart';
 import 'package:sports_app/screens/chat/widgets/main_chat_appBar.dart';
 
@@ -24,7 +25,7 @@ class MainChatScreen extends StatelessWidget {
                     child: InkWell(
                       onTap: () {
                         if (index == 4) {
-                          // Get.to(() => const SingleChatScreen());
+                          Get.to(() => const GroupChatScreen());
                         } else {
                           Get.to(() => const SingleChatScreen());
                         }
@@ -39,7 +40,7 @@ class MainChatScreen extends StatelessWidget {
                           ),
                           title: Text(
                             index == 4
-                                ? 'NBA for All'
+                                ? 'Never Walk Alone'
                                 : 'John Cooks @Johncooks16',
                             style: const TextStyle(
                                 fontSize: 16,

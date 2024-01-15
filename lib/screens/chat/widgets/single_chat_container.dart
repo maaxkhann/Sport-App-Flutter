@@ -11,7 +11,7 @@ class SingleChatContainer extends StatelessWidget {
   final Color? containerColor;
   final double? topLeftRadius;
   final double? bottomRightRadius;
-  final bool prefixImage;
+  final bool? isPrefixImage;
 
   const SingleChatContainer(
       {super.key,
@@ -22,31 +22,37 @@ class SingleChatContainer extends StatelessWidget {
       this.containerColor,
       this.topLeftRadius,
       this.bottomRightRadius,
-      required this.prefixImage});
+      this.isPrefixImage = true});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 12.0, right: 12.0, top: 12.0),
+      padding: const EdgeInsets.only(left: 12.0, right: 12.0, top: 6.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Padding(
-            padding: EdgeInsets.only(
-                right: Get.width * 0.03, bottom: Get.height * 0.02),
-            child: prefixImage == true
-                ? CircleAvatar(
+          isPrefixImage == true
+              ? Padding(
+                  padding: EdgeInsets.only(
+                      right: Get.width * 0.02, bottom: Get.height * 0.03),
+                  child: CircleAvatar(
                     radius: 18,
                     child: Image.asset(
                       imageUrl,
                       fit: BoxFit.cover,
                     ),
-                  )
-                : Text(
-                    text,
-                    style: kHeading7,
                   ),
-          ),
+                )
+              : Padding(
+                  padding: EdgeInsets.only(right: Get.width * 0.02),
+                  child: Text(
+                    time,
+                    style: const TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xFFC7C9D9)),
+                  ),
+                ),
           Flexible(
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -63,22 +69,30 @@ class SingleChatContainer extends StatelessWidget {
                   child: voice != null
                       ? Row(
                           children: [
-                            Row(
-                              children: [
-                                Image.asset(
-                                  voice.toString(),
-                                  width: Get.width * 0.5,
-                                  height: Get.height * 0.03,
-                                  fit: BoxFit.fitWidth,
-                                ),
-                                const Padding(
-                                  padding: EdgeInsets.only(left: 8.0),
-                                  child: Icon(
-                                    Icons.pause,
-                                    color: kWhite,
+                            FittedBox(
+                              fit: BoxFit.fitWidth,
+                              child: Row(
+                                children: [
+                                  Image.asset(
+                                    voice.toString(),
+                                    width: Get.width * 0.5,
+                                    height: Get.height * 0.03,
                                   ),
-                                )
-                              ],
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 8.0),
+                                    child: Container(
+                                      decoration: const BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: kWhite),
+                                      child: const Icon(
+                                        Icons.pause,
+                                        size: 20,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ],
                         )
@@ -90,16 +104,32 @@ class SingleChatContainer extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 8.0),
-            child: Text(
-              time,
-              style: const TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
-                  color: Color(0xFFC7C9D9)),
-            ),
-          )
+          isPrefixImage == false
+              ? Padding(
+                  padding: EdgeInsets.only(
+                      right: Get.width * 0.03,
+                      bottom: Get.height * 0.02,
+                      left: Get.width * 0.03),
+                  child: CircleAvatar(
+                    radius: 18,
+                    child: Image.asset(
+                      imageUrl,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                )
+              : Padding(
+                  padding: EdgeInsets.only(
+                    left: Get.width * 0.02,
+                  ),
+                  child: Text(
+                    time,
+                    style: const TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xFFC7C9D9)),
+                  ),
+                ),
         ],
       ),
     );

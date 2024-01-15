@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sports_app/app_constants/constant_colors.dart';
-import 'package:sports_app/app_constants/constant_textstyle.dart';
 
 class CustomMessageBar extends StatelessWidget {
   const CustomMessageBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController _textController = TextEditingController();
+    TextEditingController textController = TextEditingController();
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: Get.width * 0.04),
@@ -37,15 +37,18 @@ class CustomMessageBar extends StatelessWidget {
                   const SizedBox(width: 4),
                   Expanded(
                     child: TextField(
-                      controller: _textController,
-                      decoration: const InputDecoration(
-                        suffixIcon: Icon(
-                          Icons.mic,
-                          size: 24,
-                          color: kWhite,
+                      controller: textController,
+                      decoration: InputDecoration(
+                        suffixIcon: InkWell(
+                          onTap: () {},
+                          child: const Icon(
+                            Icons.mic,
+                            size: 24,
+                            color: kWhite,
+                          ),
                         ),
                         hintText: 'Type message',
-                        hintStyle: TextStyle(
+                        hintStyle: const TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                             color: Color(0xFFC7C9D9),
@@ -61,7 +64,17 @@ class CustomMessageBar extends StatelessWidget {
           ),
           const SizedBox(width: 8),
           InkWell(
-            child: const Icon(Icons.send, color: Colors.blue, size: 24),
+            child: Container(
+              padding: const EdgeInsets.all(8),
+              decoration: const BoxDecoration(
+                  shape: BoxShape.circle, color: Color(0xFF2B2B3D)),
+              child: SvgPicture.asset(
+                'assets/chat-icons/Send.svg',
+                width: 16,
+                height: 16,
+                fit: BoxFit.cover,
+              ),
+            ),
             onTap: () {},
           ),
         ],
