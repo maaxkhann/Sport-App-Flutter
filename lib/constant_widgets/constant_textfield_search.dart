@@ -8,13 +8,15 @@ class ConstantTextFieldSearch extends StatefulWidget {
   final String hintText;
   final String? suffixImage;
   final String? prefixImage;
+  final BorderSide? borderSide;
 
-  const ConstantTextFieldSearch({
-    Key? key,
-    required this.hintText,
-    this.suffixImage,
-    this.prefixImage,
-  }) : super(key: key);
+  const ConstantTextFieldSearch(
+      {Key? key,
+      required this.hintText,
+      this.suffixImage,
+      this.prefixImage,
+      this.borderSide})
+      : super(key: key);
 
   @override
   State<ConstantTextFieldSearch> createState() =>
@@ -57,7 +59,7 @@ class _ConstantTextFieldSearchState extends State<ConstantTextFieldSearch> {
               const Text(''),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide.none,
+          borderSide: widget.borderSide ?? BorderSide.none,
           borderRadius: BorderRadius.circular(16),
         ),
         enabledBorder: OutlineInputBorder(

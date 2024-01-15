@@ -173,35 +173,36 @@ class _LocalPickUpGamesScreen2State extends State<LocalPickUpGamesScreen2> {
                       child: Column(
                         children: [
                           const ConstantTextFieldSearch(
-                            hintText: 'Team Name',
-                          ),
+                              hintText: 'Team Name',
+                              borderSide: BorderSide(color: Colors.white38)),
                           Padding(
                             padding: EdgeInsets.only(top: Get.height * 0.02),
                             child: const ConstantTextFieldSearch(
                               hintText: 'Number of players',
                               suffixImage: 'assets/common-icons/arrow-down.svg',
+                              borderSide: BorderSide(color: Colors.white38),
                             ),
                           ),
                           Padding(
                             padding: EdgeInsets.only(top: Get.height * 0.02),
                             child: const ConstantTextFieldSearch(
-                              hintText: 'Schedule a date',
-                              suffixImage: 'assets/common-icons/calendar.svg',
-                            ),
+                                hintText: 'Schedule a date',
+                                suffixImage: 'assets/common-icons/calendar.svg',
+                                borderSide: BorderSide(color: Colors.white38)),
                           ),
                           Padding(
                             padding: EdgeInsets.only(top: Get.height * 0.02),
                             child: const ConstantTextFieldSearch(
-                              hintText: 'Pick location',
-                              suffixImage: 'assets/common-icons/location.svg',
-                            ),
+                                hintText: 'Pick location',
+                                suffixImage: 'assets/common-icons/location.svg',
+                                borderSide: BorderSide(color: Colors.white38)),
                           ),
                           Padding(
                             padding: EdgeInsets.only(top: Get.height * 0.02),
                             child: const ConstantTextFieldSearch(
-                              hintText: 'Select players',
-                              suffixImage: 'assets/common-icons/profile.svg',
-                            ),
+                                hintText: 'Select players',
+                                suffixImage: 'assets/common-icons/profile.svg',
+                                borderSide: BorderSide(color: Colors.white38)),
                           )
                         ],
                       ),

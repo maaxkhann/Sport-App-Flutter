@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:sports_app/app_constants/constant_colors.dart';
 import 'package:sports_app/app_constants/constant_textstyle.dart';
 
 class PostWidget extends StatefulWidget {
@@ -69,7 +70,10 @@ class _PostWidgetState extends State<PostWidget> {
                   children: [
                     Text(
                       widget.name,
-                      style: kHeading4,
+                      style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          color: kWhite),
                     ),
                     const SizedBox(
                       width: 5,
