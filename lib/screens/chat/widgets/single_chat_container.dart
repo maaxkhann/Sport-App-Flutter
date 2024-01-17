@@ -34,7 +34,7 @@ class SingleChatContainer extends StatelessWidget {
           isPrefixImage == true
               ? Padding(
                   padding: EdgeInsets.only(
-                      right: Get.width * 0.02, bottom: Get.height * 0.03),
+                      right: Get.width * 0.02, bottom: Get.height * 0.02),
                   child: CircleAvatar(
                     radius: 18,
                     child: Image.asset(

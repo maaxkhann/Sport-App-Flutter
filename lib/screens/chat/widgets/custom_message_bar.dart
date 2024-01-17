@@ -38,12 +38,14 @@ class CustomMessageBar extends StatelessWidget {
                   Expanded(
                     child: TextField(
                       controller: textController,
+                      style: const TextStyle(
+                          fontSize: 16, color: Color(0xFFC7C9D9)),
                       decoration: InputDecoration(
                         suffixIcon: InkWell(
                           onTap: () {},
                           child: const Icon(
                             Icons.mic,
-                            size: 24,
+                            size: 20,
                             color: kWhite,
                           ),
                         ),

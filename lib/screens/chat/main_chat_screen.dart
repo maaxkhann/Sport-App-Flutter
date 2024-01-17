@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sports_app/app_constants/constant_colors.dart';
-import 'package:sports_app/screens/chat/group_chat_screen.dart';
-import 'package:sports_app/screens/chat/single_chat_screen.dart';
+import 'package:sports_app/app_constants/constant_textstyle.dart';
+import 'package:sports_app/screens/chat/widgets/main_and_group_chat.dart';
 import 'package:sports_app/screens/chat/widgets/main_chat_appBar.dart';
+
+import 'widgets/calls_tabbar_view_widget.dart';
 
 class MainChatScreen extends StatelessWidget {
   const MainChatScreen({super.key});
@@ -17,61 +19,43 @@ class MainChatScreen extends StatelessWidget {
         appBar: const MainChatAppBar(),
         body: TabBarView(
           children: [
-            ListView.builder(
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: EdgeInsets.only(top: Get.height * 0.02),
-                    child: InkWell(
-                      onTap: () {
-                        if (index == 4) {
-                          Get.to(() => const GroupChatScreen());
-                        } else {
-                          Get.to(() => const SingleChatScreen());
-                        }
-                      },
-                      child: Card(
-                        color: const Color(0xFF2B2B3D),
-                        child: ListTile(
-                          leading: CircleAvatar(
-                            radius: 23,
-                            child:
-                                Image.asset('assets/common-icons/person.png'),
-                          ),
-                          title: Text(
-                            index == 4
-                                ? 'Never Walk Alone'
-                                : 'John Cooks @Johncooks16',
-                            style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: kWhite),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                          subtitle: Text(
-                            index == 4
-                                ? '@BigFlexLFC: Big game Tonight....'
-                                : 'Hey Buddy, Available for tonight’s game?',
-                            style: const TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xFFE3EDFF)),
-                          ),
-                          trailing: const Text(
-                            '2hrs',
-                            style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xFFC7C9D9)),
-                          ),
-                        ),
-                      ),
-                    ),
-                  );
-                }),
-            Center(child: Text("Page 2")),
-            Center(child: Text("Page 2")),
+            const MainAndGroupChat(
+              image: 'assets/common-icons/person.png',
+              name: 'John Cooks @Johncooks16',
+              message: 'Hey Buddy, Available for tonight’s game?',
+              time: '2hrs',
+            ),
+            Scaffold(
+              body: const MainAndGroupChat(
+                image: 'assets/chat-icons/image 186.png',
+                name: 'NBA for All',
+                message: '@BigFlexLFC: Big game Tonight....',
+                time: '2hrs',
+              ),
+              floatingActionButton: Container(
+                width: Get.width * 0.12,
+                height: Get.height * 0.06,
+                decoration:
+                    const BoxDecoration(shape: BoxShape.circle, boxShadow: [
+                  BoxShadow(
+                    color: Color(0Xff3377ff26),
+                    spreadRadius: 8,
+                    blurRadius: 10,
+                  ),
+                ]),
+                child: FloatingActionButton(
+                  backgroundColor: Colors.green,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(Get.height * 0.1)),
+                  onPressed: () {},
+                  child: const Icon(
+                    Icons.add,
+                    color: kWhite,
+                  ),
+                ),
+              ),
+            ),
+            const CallsTabBarView()
           ],
         ),
       ),
