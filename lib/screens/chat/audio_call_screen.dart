@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:sports_app/app_constants/constant_colors.dart';
 import 'package:sports_app/app_constants/constant_textstyle.dart';
+import 'package:sports_app/screens/chat/single_chat_screen.dart';
 
 class AudioCallScreen extends StatelessWidget {
   const AudioCallScreen({super.key});
@@ -19,37 +20,38 @@ class AudioCallScreen extends StatelessWidget {
               height: Get.height * 1,
               fit: BoxFit.cover,
             ),
-            InkWell(
-              onTap: () {
-                Get.back();
-              },
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                    vertical: Get.height * 0.025, horizontal: Get.width * 0.06),
-                child: SvgPicture.asset(
-                  'assets/common-icons/arrow-back.svg',
-                  height: Get.height * 0.025,
-                  width: Get.height * 0.025,
-                ),
-              ),
-            ),
             ListView(
               children: [
-                Padding(
-                  padding: EdgeInsets.only(top: Get.height * 0.04),
-                  child: const Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Zara',
-                        style: kHeading3,
+                InkWell(
+                  onTap: () {
+                    Get.back();
+                  },
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: Get.height * 0.025,
+                          horizontal: Get.width * 0.06),
+                      child: SvgPicture.asset(
+                        'assets/common-icons/arrow-back.svg',
+                        height: Get.height * 0.025,
+                        width: Get.height * 0.025,
                       ),
-                      Text(
-                        'Calling...',
-                        style: kHeading7,
-                      ),
-                    ],
+                    ),
                   ),
+                ),
+                const Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Zara',
+                      style: kHeading3,
+                    ),
+                    Text(
+                      'Calling...',
+                      style: kHeading7,
+                    ),
+                  ],
                 ),
                 SizedBox(
                   height: Get.height * 0.032,
@@ -164,9 +166,12 @@ class AudioCallScreen extends StatelessWidget {
                 height: Get.height * 0.15,
                 decoration: const BoxDecoration(
                     shape: BoxShape.circle, color: Colors.red),
-                child: const Icon(
-                  Icons.call_end,
-                  color: kWhite,
+                child: InkWell(
+                  onTap: () => Get.back(),
+                  child: const Icon(
+                    Icons.call_end,
+                    color: kWhite,
+                  ),
                 ),
               ),
             )

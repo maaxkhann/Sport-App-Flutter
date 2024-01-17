@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:sports_app/app_constants/constant_colors.dart';
 import 'package:sports_app/app_constants/constant_textstyle.dart';
+import 'package:sports_app/constant_widgets/bottom_nav_bar_widget.dart';
 
 class MainChatAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MainChatAppBar({
@@ -14,7 +15,7 @@ class MainChatAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: kBG,
       leading: InkWell(
-        onTap: () => Get.back(),
+        onTap: () => Get.offAll(const BottomNavigationBarWidget()),
         child: SvgPicture.asset(
           'assets/common-icons/arrow-back.svg',
           width: 9,

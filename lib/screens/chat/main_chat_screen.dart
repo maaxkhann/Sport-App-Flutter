@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sports_app/app_constants/constant_colors.dart';
-import 'package:sports_app/app_constants/constant_textstyle.dart';
 import 'package:sports_app/screens/chat/widgets/main_and_group_chat.dart';
 import 'package:sports_app/screens/chat/widgets/main_chat_appBar.dart';
 

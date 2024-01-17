@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sports_app/app_constants/constant_colors.dart';
 import 'package:sports_app/screens/chat/audio_call_screen.dart';
+import 'package:sports_app/screens/chat/incoming_videocall_screen.dart';
 
 class SingleAndGroupChatAppBar extends StatelessWidget
     implements PreferredSizeWidget {
@@ -107,11 +108,14 @@ class SingleAndGroupChatAppBar extends StatelessWidget
                 0xFF181829,
               ),
               shape: BoxShape.circle),
-          child: const Center(
-            child: Icon(
-              Icons.video_call,
-              size: 18,
-              color: kWhite,
+          child: Center(
+            child: InkWell(
+              onTap: () => Get.to(() => const InComingVideoCallScreen()),
+              child: const Icon(
+                Icons.video_call,
+                size: 18,
+                color: kWhite,
+              ),
             ),
           ),
         ),
