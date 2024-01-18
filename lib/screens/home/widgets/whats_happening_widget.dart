@@ -1,15 +1,30 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:sports_app/app_constants/constant_colors.dart';
+
 import 'package:sports_app/screens/voice%20feature%20&%20poll%20feature/voice_feature_screen.dart';
 
 import '../../voice feature & poll feature/poll_feature_screen.dart';
 
-class WhatsHappeningWidget extends StatelessWidget {
+class WhatsHappeningWidget extends StatefulWidget {
   const WhatsHappeningWidget({
     super.key,
   });
+
+  @override
+  State<WhatsHappeningWidget> createState() => _WhatsHappeningWidgetState();
+}
+
+class _WhatsHappeningWidgetState extends State<WhatsHappeningWidget> {
+  File? image;
+  final ImagePicker picker = ImagePicker();
+  void getImage() async {
+    await picker.pickImage(source: ImageSource.gallery);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +61,9 @@ class WhatsHappeningWidget extends StatelessWidget {
                     ),
                     InkWell(
                         splashColor: Colors.white,
-                        onTap: () {},
+                        onTap: () {
+                          getImage();
+                        },
                         child: SvgPicture.asset(
                           'assets/common-icons/gallery.svg',
                         )),

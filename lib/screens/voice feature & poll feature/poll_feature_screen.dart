@@ -48,7 +48,7 @@ class _PollFeatureScreenState extends State<PollFeatureScreen> {
                 children: [
                   RoundButton(
                     onPressed: () {
-                      // print('tapped');
+                      Get.back();
                     },
                     buttonColor: const Color(0xFFCED0D2),
                     titleColor: const Color(0xFF6B7588),

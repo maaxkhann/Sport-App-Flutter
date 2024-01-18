@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sports_app/screens/explore-articledetail/match-detail/match_detail_screen.dart';
 
 class CustomListTile extends StatelessWidget {
   final String imagePath1;
@@ -18,6 +19,7 @@ class CustomListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+        onTap: () => Get.to(() => const MatchDetailScreen()),
         contentPadding: EdgeInsets.zero,
         leading: Row(
           mainAxisSize: MainAxisSize.min,
@@ -90,7 +92,6 @@ class CustomListTile extends StatelessWidget {
           ],
         ),
         trailing: const InkWell(
-            //   onTap: () => Get.to(()=> const MatchDetailScreen()),
             child: Icon(
           Icons.clear,
           size: 19,

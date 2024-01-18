@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:sports_app/app_constants/constant_colors.dart';
 import 'package:sports_app/app_constants/constant_textstyle.dart';
-import 'package:sports_app/screens/chat/group_chat_screen.dart';
 import 'package:sports_app/screens/chat/widgets/videocall_container.dart';
 
 class VideoCallScreen extends StatelessWidget {

@@ -9,12 +9,16 @@ import 'package:sports_app/screens/home/widgets/post_widget.dart';
 import 'package:sports_app/screens/home/widgets/story_widget.dart';
 import 'package:sports_app/screens/home/widgets/trending_widget.dart';
 import 'package:sports_app/screens/home/widgets/whats_happening_widget.dart';
-
 import '../explore-articledetail/explore_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

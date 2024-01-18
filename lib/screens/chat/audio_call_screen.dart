@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:sports_app/app_constants/constant_colors.dart';
 import 'package:sports_app/app_constants/constant_textstyle.dart';
-import 'package:sports_app/screens/chat/single_chat_screen.dart';
 
 class AudioCallScreen extends StatelessWidget {
   const AudioCallScreen({super.key});
