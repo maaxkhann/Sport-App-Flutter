@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sports_app/screens/live/standings_view/standings_view.dart';
-
-import '../../constant_widgets/constant_round_button.dart';
+import 'package:sports_app/screens/live/widgets/live_screen-stack_widget.dart';
+import 'package:sports_app/screens/live/widgets/live_screen_appBar.dart';
 import '../../constant_widgets/constant_textfield_search.dart';
 import '../rising-talent/rising_talent_screen.dart';
 
@@ -15,7 +15,7 @@ class LiveScreen extends StatefulWidget {
 }
 
 class _LiveScreenState extends State<LiveScreen> {
-  int selectedTextIndex = -1;
+  int selectedTextIndex = 0;
   int selectedGameIndex = -1;
   List<String> texts = [
     'Livestream',
@@ -54,49 +54,7 @@ class _LiveScreenState extends State<LiveScreen> {
               horizontal: Get.width * 0.046, vertical: Get.height * 0.02),
           child: ListView(
             children: [
-              Row(
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Get.back();
-                    },
-                    child: SizedBox(
-                      height: Get.height * 0.025,
-                      width: Get.height * 0.025,
-                      child: SvgPicture.asset(
-                          'assets/common-icons/arrow-back.svg'),
-                    ),
-                  ),
-                  SizedBox(
-                    width: Get.width * 0.060,
-                  ),
-                  const Text(
-                    'Livestream',
-                    style: TextStyle(
-                        fontSize: 19,
-                        fontWeight: FontWeight.w700,
-                        color: Color(0xFFFFFFFF)),
-                  ),
-                  const Spacer(),
-                  SizedBox(
-                    height: Get.height * 0.034,
-                    child: InkWell(
-                      onTap: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 14.0),
-                        child: SvgPicture.asset(
-                          'assets/common-icons/notification.svg',
-                        ),
-                      ),
-                    ),
-                  ),
-                  RoundButton(
-                      onPressed: () {},
-                      buttonColor: const Color(0xFFE53535),
-                      titleColor: Colors.white,
-                      title: 'Go Live')
-                ],
-              ),
+              const LiveScreenAppBar(),
               SizedBox(
                 height: Get.height * 0.035,
               ),
@@ -208,8 +166,7 @@ class _LiveScreenState extends State<LiveScreen> {
                                   gameImages[index],
                                   filterQuality: FilterQuality.high,
                                   width: selectedGameIndex == index
-                                      ? Get.width *
-                                          0.08 // Adjust the desired width
+                                      ? Get.width * 0.08
                                       : Get.width * 0.08,
                                 ),
                               ),
@@ -235,184 +192,16 @@ class _LiveScreenState extends State<LiveScreen> {
               SizedBox(
                 height: Get.height * 0.025,
               ),
-              SingleChildScrollView(
+              const SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Stack(
-                      children: [
-                        Container(
-                          width: 220,
-                          height: 164,
-                          decoration: BoxDecoration(
-                              color: const Color(0xFF242433),
-                              borderRadius: BorderRadius.circular(12)),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(12),
-                            child: Padding(
-                              padding:
-                                  EdgeInsets.only(bottom: Get.height * 0.03),
-                              child: Image.asset(
-                                'assets/live-icons/image 158.png',
-                                width: 204,
-                                height: 156,
-                                filterQuality: FilterQuality.high,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                            right: Get.width * 0.055,
-                            top: Get.height * 0.04,
-                            child: const Row(
-                              children: [
-                                Icon(
-                                  Icons.visibility,
-                                  size: 20,
-                                  color: Colors.white,
-                                ),
-                                SizedBox(
-                                  width: 4,
-                                ),
-                                Text(
-                                  '446K',
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
-                                      color: Colors.white),
-                                )
-                              ],
-                            )),
-                        Positioned(
-                            left: Get.width * 0.05,
-                            bottom: Get.height * 0.045,
-                            child: SvgPicture.asset(
-                              'assets/live-icons/pause.svg',
-                              width: 20,
-                              height: 20,
-                            )),
-                        Positioned(
-                            right: Get.width * 0.05,
-                            bottom: Get.height * 0.045,
-                            child: Row(
-                              children: [
-                                const Icon(
-                                  Icons.volume_mute_outlined,
-                                  size: 25,
-                                  color: Colors.white,
-                                ),
-                                const SizedBox(
-                                  width: 12,
-                                ),
-                                SvgPicture.asset(
-                                  'assets/live-icons/maximize2.svg',
-                                  width: 16,
-                                  height: 16,
-                                ),
-                              ],
-                            )),
-                        const Positioned(
-                          bottom: 7,
-                          left: 8,
-                          child: Text(
-                            'Everton vs Leeds | Premier league',
-                            style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white),
-                          ),
-                        )
-                      ],
-                    ),
-                    const SizedBox(
+                    LiveScreenStackWidget(),
+                    SizedBox(
                       width: 15,
                     ),
-                    Stack(
-                      children: [
-                        Container(
-                          width: 220,
-                          height: 164,
-                          decoration: BoxDecoration(
-                              color: const Color(0xFF242433),
-                              borderRadius: BorderRadius.circular(12)),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(12),
-                            child: Padding(
-                              padding:
-                                  EdgeInsets.only(bottom: Get.height * 0.03),
-                              child: Image.asset(
-                                'assets/live-icons/image 158.png',
-                                width: 204,
-                                height: 156,
-                                filterQuality: FilterQuality.high,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                            right: Get.width * 0.05,
-                            top: Get.height * 0.045,
-                            child: const Row(
-                              children: [
-                                Icon(
-                                  Icons.visibility,
-                                  size: 20,
-                                  color: Colors.white,
-                                ),
-                                SizedBox(
-                                  width: 4,
-                                ),
-                                Text(
-                                  '446K',
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
-                                      color: Colors.white),
-                                )
-                              ],
-                            )),
-                        Positioned(
-                            left: Get.width * 0.05,
-                            bottom: Get.height * 0.045,
-                            child: SvgPicture.asset(
-                              'assets/live-icons/pause.svg',
-                              width: 20,
-                              height: 20,
-                            )),
-                        Positioned(
-                            right: Get.width * 0.05,
-                            bottom: Get.height * 0.045,
-                            child: Row(
-                              children: [
-                                const Icon(
-                                  Icons.volume_mute_outlined,
-                                  size: 25,
-                                  color: Colors.white,
-                                ),
-                                const SizedBox(
-                                  width: 12,
-                                ),
-                                SvgPicture.asset(
-                                  'assets/live-icons/maximize2.svg',
-                                  width: 16,
-                                  height: 16,
-                                ),
-                              ],
-                            )),
-                        const Positioned(
-                          bottom: 7,
-                          left: 8,
-                          child: Text(
-                            'Fulham vs Chelsea| Premier league',
-                            style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white),
-                          ),
-                        )
-                      ],
-                    ),
+                    LiveScreenStackWidget()
                   ],
                 ),
               ),
