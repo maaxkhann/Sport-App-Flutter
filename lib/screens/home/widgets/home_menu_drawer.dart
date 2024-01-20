@@ -21,8 +21,8 @@ class HomeMenuDrawer extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Container(
-                  width: 25,
-                  height: 25,
+                  width: 24,
+                  height: 24,
                   decoration: BoxDecoration(
                     color: const Color(0xFF323A3D),
                     borderRadius: BorderRadius.circular(40),
@@ -33,7 +33,7 @@ class HomeMenuDrawer extends StatelessWidget {
                           child: const Icon(
                             Icons.clear,
                             color: Colors.white,
-                            size: 20,
+                            size: 18,
                           ))),
                 ),
                 Row(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sports_app/app_constants/constant_colors.dart';
 import 'package:sports_app/app_constants/constant_textstyle.dart';
+import 'package:sports_app/screens/home/stories_screen.dart';
 
 class StoryWidget extends StatelessWidget {
   final String image;
@@ -15,7 +16,7 @@ class StoryWidget extends StatelessWidget {
       child: Column(
         children: [
           InkWell(
-            onTap: () {},
+            onTap: () => Get.to(() => const StoriesScreen()),
             child: Container(
               height: Get.height * 0.065,
               width: Get.width * 0.134,
