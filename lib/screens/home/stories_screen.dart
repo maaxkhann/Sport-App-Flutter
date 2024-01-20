@@ -140,6 +140,7 @@ class StoriesScreen extends StatelessWidget {
                             borderSide: BorderSide.none,
                             borderRadius: BorderRadius.circular(16)),
                         focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide.none,
                             borderRadius: BorderRadius.circular(16))),
                     style: const TextStyle(color: kWhite),
                   ),
