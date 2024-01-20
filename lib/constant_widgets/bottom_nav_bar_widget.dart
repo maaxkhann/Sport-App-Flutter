@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sports_app/screens/chat/main_chat_screen.dart';
+import 'package:sports_app/screens/shop/ShopScreen.dart';
 
 import '../screens/explore-articledetail/explore_screen.dart';
 import '../screens/home/home_screen.dart';
@@ -22,7 +23,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
     const ExploreScreen(),
     const LiveScreen(),
     const MainChatScreen(),
-    // ExploreScreen(),
+    const ShopScreen()
   ];
 
   @override

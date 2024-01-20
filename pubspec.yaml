@@ -39,6 +39,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   sizer: ^2.0.15
   image_picker: ^1.0.7
+  dropdown_button2: ^2.3.9
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +76,7 @@ flutter:
    - assets/rising-talent-icons/
    - assets/standing-view-icons/
    - assets/chat-icons/
+   - assets/shop/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

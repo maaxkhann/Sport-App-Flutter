@@ -10,6 +10,8 @@ const TextStyle kHeading4 =
     TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: Colors.white);
 const TextStyle kHeading5 = TextStyle(
     fontSize: 16, fontWeight: FontWeight.w400, color: Color(0xFF65656B));
+const TextStyle kHeading55 =
+    TextStyle(fontSize: 16, fontWeight: FontWeight.w400, color: Colors.white);
 const TextStyle kHeading6 =
     TextStyle(fontSize: 14, fontWeight: FontWeight.w300, color: Colors.white);
 const TextStyle kHeading7 =

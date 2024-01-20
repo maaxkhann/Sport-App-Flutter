@@ -46,6 +46,7 @@ class _LiveScreenState extends State<LiveScreen> {
 
   @override
   Widget build(BuildContext context) {
+    selectedTextIndex = 0;
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color(0xFF181829),
