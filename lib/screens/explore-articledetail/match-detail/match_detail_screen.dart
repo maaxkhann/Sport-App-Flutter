@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:sports_app/app_constants/constant_colors.dart';
 import 'package:sports_app/app_constants/constant_textstyle.dart';
+import 'package:sports_app/screens/explore-articledetail/match-detail/widgets/line_up_widget.dart';
+import 'package:sports_app/screens/explore-articledetail/match-detail/widgets/players_widget.dart';
 import 'package:sports_app/screens/explore-articledetail/match-detail/widgets/reusable_row_widget.dart';
 import 'package:sports_app/screens/explore-articledetail/widgets/match_detail_widget.dart';
 
@@ -280,7 +283,7 @@ class _MatchDetailScreenState extends State<MatchDetailScreen> {
                           ],
                         ),
                       )
-                    : Text('............')
+                    : const LineUpWidget()
               ],
             ),
           ),
