@@ -11,11 +11,13 @@ class GetTicketContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      clipBehavior: Clip.none,
       children: [
         SizedBox(
           width: Get.width * 0.85,
           height: Get.height * 0.3,
           child: Stack(
+            clipBehavior: Clip.none,
             children: [
               Container(
                 width: Get.width * 0.9,
@@ -29,9 +31,18 @@ class GetTicketContainer extends StatelessWidget {
               ),
               Positioned(
                 top: 50,
-                right: Get.width * 0.652,
+                right: Get.width * 0.68,
                 child: Image.asset(
                   'assets/shop/stadium.png',
+                  height: Get.height * 0.1,
+                  fit: BoxFit.contain,
+                ),
+              ),
+              Positioned(
+                top: 50,
+                left: Get.width * 0.652,
+                child: Image.asset(
+                  'assets/shop/stadium-1.png',
                   height: Get.height * 0.1,
                   fit: BoxFit.contain,
                 ),
@@ -131,15 +142,6 @@ class GetTicketContainer extends StatelessWidget {
             ],
           ),
         ),
-        Positioned(
-          top: 50,
-          left: Get.width * 0.652,
-          child: Image.asset(
-            'assets/shop/stadium-1.png',
-            height: Get.height * 0.1,
-            fit: BoxFit.contain,
-          ),
-        )
       ],
     );
   }

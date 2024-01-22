@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:sports_app/screens/live/LiveScoreScreen.dart';
 import 'package:sports_app/screens/live/standings_view/standings_view.dart';
 import 'package:sports_app/screens/live/widgets/live_screen-stack_widget.dart';
 import 'package:sports_app/screens/live/widgets/live_screen_appBar.dart';
@@ -72,7 +73,7 @@ class _LiveScreenState extends State<LiveScreen> {
                                 selectedTextIndex = entry.key;
                               });
                               if (texts[entry.key] == 'LiveScore') {
-                                Get.to(() => const StandingsView());
+                                Get.to(() => const LiveScoreScreen());
                               }
                               if (texts[entry.key] == 'Rising Talent') {
                                 Get.to(() => const RisingTalentScreen());

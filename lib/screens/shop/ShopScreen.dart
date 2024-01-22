@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sports_app/screens/shop/Get_Ticket_Screen.dart';
+import 'package:sports_app/screens/shop/Get_Ticket/Book_Ticket_Screen.dart';
 import 'package:sports_app/screens/shop/widgets/AppBar.dart';
 import 'package:sports_app/screens/shop/widgets/Extra_Product_Container.dart';
 import 'package:sports_app/screens/shop/widgets/Get_Ticket_Container.dart';
@@ -38,7 +38,7 @@ class _ShopScreenState extends State<ShopScreen> {
               GetTicketContainer(
                 getTicketOnTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (ctx) {
-                    return GetTicketScreen();
+                    return BookTicketScreen();
                   }));
                 },
               ),
@@ -54,7 +54,7 @@ class _ShopScreenState extends State<ShopScreen> {
                       "Recomended",
                       style: kHeading3,
                     ),
-                    Image.asset('assets/shop/arrow.png')
+                    Image.asset('assets/shop/arrow.png'),
                   ],
                 ),
               ),

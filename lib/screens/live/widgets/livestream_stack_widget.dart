@@ -15,7 +15,7 @@ class LiveStreamStackWidget extends StatelessWidget {
         Stack(
           children: [
             Container(
-                // padding: const EdgeInsets.all(7),
+                margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
                 width: double.infinity,
                 //  height: Get.height * 0.3,
                 decoration: BoxDecoration(
@@ -25,14 +25,14 @@ class LiveStreamStackWidget extends StatelessWidget {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(12),
-                      child: Padding(
-                        padding: EdgeInsets.only(bottom: Get.height * 0.03),
-                        child: Image.asset(
-                          'assets/live-icons/image 158.png',
-                          width: double.infinity,
-                          fit: BoxFit.fitWidth,
-                        ),
+                      child: Image.asset(
+                        'assets/live-icons/image 158.png',
+                        width: double.infinity,
+                        fit: BoxFit.fitWidth,
                       ),
+                    ),
+                    SizedBox(
+                      height: Get.height * 0.01,
                     ),
                     Padding(
                       padding:
@@ -74,28 +74,41 @@ class LiveStreamStackWidget extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.only(
-                          top: Get.height * 0.01,
+                          top: Get.height * 0.02,
                           bottom: Get.height * 0.02,
                           left: Get.width * 0.03,
                           right: Get.width * 0.04),
-                      child: const Row(
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            'Match',
-                            style: TextStyle(
+                          Container(
+                            decoration: const BoxDecoration(
+                              border: Border(
+                                bottom: BorderSide(
+                                  color: Colors.white, // Color of the underline
+                                  width: 2.0, // Thickness of the underline
+                                ),
+                              ),
+                            ),
+                            child: const Text(
+                              'Match',
+                              style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w700,
-                                color: kWhite),
+                                color: kWhite,
+                                decoration:
+                                    TextDecoration.underline, // Add underline
+                              ),
+                            ),
                           ),
-                          Text(
+                          const Text(
                             'Match details',
                             style: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w600,
                                 color: Color(0xFFCED0D2)),
                           ),
-                          Text(
+                          const Text(
                             'Match stat',
                             style: TextStyle(
                                 fontSize: 12,

@@ -7,9 +7,8 @@ import 'package:sports_app/constant_widgets/bottom_nav_bar_widget.dart';
 
 class GetTicketScreenAppBar extends StatelessWidget
     implements PreferredSizeWidget {
-  const GetTicketScreenAppBar({
-    super.key,
-  });
+  final String appBartxt;
+  const GetTicketScreenAppBar({super.key, required this.appBartxt});
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +24,8 @@ class GetTicketScreenAppBar extends StatelessWidget
           color: Colors.white,
         ),
       ),
-      title: const Text(
-        'Book Ticket',
+      title: Text(
+        appBartxt,
         style: kHeading3,
       ),
       actions: [
@@ -35,7 +34,7 @@ class GetTicketScreenAppBar extends StatelessWidget
           child: Padding(
             padding: EdgeInsets.only(right: Get.width * 0.05),
             child: SvgPicture.asset(
-              'assets/common-icons/notification.svg',
+              'assets/shop/cart.svg',
               width: 17,
               height: 25,
             ),

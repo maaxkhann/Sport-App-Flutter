@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:sports_app/app_constants/constant_textstyle.dart';
+import 'package:sports_app/screens/shop/Get_Ticket/All_Ticket_Screen.dart';
 
-import 'Get_Ticket/GetTicketScreeenAppBar.dart';
+import '../widgets/GetTicketScreeenAppBar.dart';
 
-class GetTicketScreen extends StatefulWidget {
-  const GetTicketScreen({super.key});
+class BookTicketScreen extends StatefulWidget {
+  const BookTicketScreen({super.key});
 
   @override
-  State<GetTicketScreen> createState() => _GetTicketScreenState();
+  State<BookTicketScreen> createState() => _BookTicketScreenState();
 }
 
-class _GetTicketScreenState extends State<GetTicketScreen> {
+class _BookTicketScreenState extends State<BookTicketScreen> {
   String selectedValue = '1';
   List<String> dropdownItems = ['1', '2', '3'];
   int quantityofProduct = 0;
@@ -22,7 +23,9 @@ class _GetTicketScreenState extends State<GetTicketScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: GetTicketScreenAppBar(),
+      appBar: GetTicketScreenAppBar(
+        appBartxt: 'Book Ticket',
+      ),
       body: Center(
         child: SizedBox(
           width: Get.width * 0.9,
@@ -36,7 +39,11 @@ class _GetTicketScreenState extends State<GetTicketScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    homeButton(() {}, Color(0xff1566C9), 'Home', kHeading55),
+                    homeButton(() {
+                      Navigator.push(context, MaterialPageRoute(builder: (ctx) {
+                        return AllTicketScreen();
+                      }));
+                    }, Color(0xff1566C9), 'Home', kHeading55),
                     homeButton(
                         () {},
                         Color(0xff8F90A6),
@@ -146,7 +153,7 @@ class _GetTicketScreenState extends State<GetTicketScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               SizedBox(
-                width: Get.width * 0.4,
+                width: Get.width * 0.3,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -156,7 +163,7 @@ class _GetTicketScreenState extends State<GetTicketScreen> {
                       fit: BoxFit.contain,
                     ),
                     Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
@@ -404,13 +411,15 @@ class _GetTicketScreenState extends State<GetTicketScreen> {
           style: kHeading6,
         ),
         Container(
-          height: Get.height * 0.06,
+          height: Get.height * 0.04,
           width: Get.width * 0.16,
           decoration: BoxDecoration(
             border: Border.all(color: Color(0xff6B7588)),
             borderRadius: BorderRadius.circular(5),
           ),
           child: DropdownButton(
+            underline: SizedBox(),
+            icon: SizedBox(),
             dropdownColor: Color.fromARGB(255, 4, 28, 73),
             value: selectedValue,
             onChanged: (String? newValue) {
