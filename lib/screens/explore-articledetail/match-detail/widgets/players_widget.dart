@@ -19,7 +19,7 @@ class PlayersWidget extends StatelessWidget {
         Container(
           margin: EdgeInsets.only(left: Get.width * 0.06),
           width: Get.width * 0.08,
-          height: Get.height * 0.05,
+          height: Get.height * 0.045,
           decoration: const BoxDecoration(
               shape: BoxShape.circle, color: Color(0xFF22966A)),
           child: FittedBox(
@@ -33,8 +33,8 @@ class PlayersWidget extends StatelessWidget {
           ),
         ),
         Container(
-          //  width: Get.width * 0.2,
-          //  height: Get.height * 0.04,
+          width: Get.width * 0.2,
+          height: Get.height * 0.035,
           padding: EdgeInsets.symmetric(
               horizontal: Get.width * 0.02, vertical: Get.height * 0.006),
           decoration: BoxDecoration(
